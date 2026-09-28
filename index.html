@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Management System</title>
+    <link rel="icon" type="image/jpeg" href="images/mobileOne.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-100 text-zinc-800 min-h-screen">
+
+    <header class="bg-zinc-900 py-6">
+        <h1 class="text-center text-3xl font-bold text-emerald-400">Store Management System</h1>
+    </header>
+
+    <!-- Form -->
+    <section class="max-w-2xl mx-auto px-4 py-8">
+
+        <div class="bg-white rounded-2xl shadow-sm ring-1 ring-zinc-200 p-6 grid gap-4 sm:grid-cols-2 content-start">
+
+            <div>
+                <label for="productName" class="block text-sm font-medium mb-1">Product Name:</label>
+                <input id="productName" type="text"
+                    class="w-full rounded-lg border border-zinc-300 bg-zinc-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            </div>
+
+            <div>
+                <label for="productPrice" class="block text-sm font-medium mb-1">Product Price:</label>
+                <input id="productPrice" type="text"
+                    class="w-full rounded-lg border border-zinc-300 bg-zinc-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            </div>
+
+            <div class="sm:col-span-2">
+                <label for="productCategory" class="block text-sm font-medium mb-1">Product Category:</label>
+                <input id="productCategory" type="text"
+                    class="w-full rounded-lg border border-zinc-300 bg-zinc-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            </div>
+
+            <div class="sm:col-span-2">
+                <label for="productDesc" class="block text-sm font-medium mb-1">Product Description:</label>
+                <textarea id="productDesc" rows="3"
+                    class="w-full rounded-lg border border-zinc-300 bg-zinc-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+            </div>
+
+            <div class="sm:col-span-2">
+                <label for="productFile" class="block text-sm font-medium mb-1">Product File:</label>
+                <input id="productFile" type="file"
+                    class="w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2 text-sm file:mr-3 file:rounded-md file:border-0 file:bg-zinc-900 file:px-3 file:py-1.5 file:text-white hover:file:bg-zinc-700">
+            </div>
+
+            <div class="sm:col-span-2 flex gap-3">
+                <button id="addBtn" onclick="createProduct()"
+                    class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2 rounded-lg">
+                    Add Product
+                </button>
+                <button id="updateBtn" onclick="updateTwo()"
+                    class="hidden bg-amber-500 hover:bg-amber-600 text-white font-medium px-5 py-2 rounded-lg">
+                    Update
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Search -->
+    <section class="max-w-7xl mx-auto px-4 mb-6">
+        <label for="searchInput" class="block text-sm font-medium mb-1">Search by Name</label>
+        <input id="searchInput" oninput="search()" type="search"
+            class="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+    </section>
+
+    <!-- Products -->
+    <section class="max-w-7xl mx-auto px-4 pb-12">
+        <div id="data" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
